@@ -1,5 +1,9 @@
 package ornek;
 
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+
 public class ArrayPratikler
 {
     public static void main(String[] args)
@@ -68,7 +72,7 @@ public class ArrayPratikler
 
 
         //****diziden 3 elemanı silme
-    /*  int[] dizi = {5,7,51,11,10,3,1};
+   /*  int[] dizi = {5,7,51,11,10,3,1};
         int[] dizi2 = {5,3,51};
         int count=0;
         boolean istru=true;
@@ -101,7 +105,7 @@ public class ArrayPratikler
 
 
 //listeden 3 elemanı silme
-     /*   int[] dizi = {0, 7, 51, 11, 10, 3, 1};
+    /*    int[] dizi = {0, 7, 51, 11, 10, 3, 1};
         int[] dizi2 = {1, 3, 51};
         int count = 0;
         int[] yeniDizi = new int[dizi.length];
@@ -117,9 +121,7 @@ public class ArrayPratikler
             if (liste.contains(dizi2[i]))
             {
                 liste.remove(liste.indexOf(dizi2[i]));
-
             }
-
         }
         System.out.println(liste);*/
          /*// Kullanıcıdan aldığınız tamsayılar ile bir array oluşturunuz ve bu arraydeki en küçük ve en büyük öğeler arasındaki farkı konsolda yazdırınız.
@@ -473,18 +475,139 @@ public class ArrayPratikler
 
 
 
+//Soru 6) Verilen bir Array'den isten degere eşit olan elamanlari kaldirip, kalanlari yeni bir Array olarak yazdiran bir method yaziniz
+
+ /*       int[][] cokBoyutluDizi = {{2, 3, 5, 9, 13}, {37, 54, 79, 99, 113, 555, 1337}, {0, -7, -9, -117, -5, 25, 17}};
+        int[] silinecekDizi = {5, 17, -9, 0, 54};
+        List<List<Integer>> yeniCokBoyutluListe = new ArrayList<>();
+        int cokBoyutluDiziFullLength = 0;
+        int silinecekIndex = 0;
+
+        for(int i = 0; i < cokBoyutluDizi.length; i++)
+        {
+            cokBoyutluDiziFullLength += cokBoyutluDizi[i].length;
+        }
+
+        boolean[] silineceklerIndeksi = new boolean[cokBoyutluDiziFullLength];
+
+        for(int i = 0; i < silinecekDizi.length; i++)
+        {
+            for(int j = 0; j < cokBoyutluDizi.length; j++)
+            {
+                if(silineceklerIndeksi[silinecekIndex])
+                    continue;
+                for(int k = 0; k < cokBoyutluDizi[j].length; k++)
+                {
+                    if(cokBoyutluDizi[j][k] == silinecekDizi[i])
+                    {
+                        silineceklerIndeksi[silinecekIndex] = true;
+                    }
+                    silinecekIndex++;
+                }
+            }
+            silinecekIndex = 0;
+        }
+
+        silinecekIndex = 0;
+        List<Integer> yeniListeElemalari;
+        for(int i = 0; i < cokBoyutluDizi.length; i++)
+        {
+            yeniListeElemalari = new ArrayList<>();
+            for(int j = 0; j < cokBoyutluDizi[i].length; j++)
+            {
+                if(!silineceklerIndeksi[silinecekIndex])
+                    yeniListeElemalari.add(cokBoyutluDizi[i][j]);
+                silinecekIndex++;
+            }
+            yeniCokBoyutluListe.add(yeniListeElemalari);
+        }
+
+        System.out.println(yeniCokBoyutluListe);*/
 
 
 
+  /*    int[]dizi = {54, 3, 5, 9, 13, 37, 54, 79, 99, 113, 555, 17};
+        int[] silinecekDizi = {5, 17, -9, 0, 54};
+        List<Integer> yeniListe = new ArrayList<>();
+
+        int counter = 0;
 
 
+        boolean[] silineceklerIndeksiDizi = new boolean[dizi.length];
+
+        for (int i = 0; i < silinecekDizi.length; i++)
+        {
+            for (int j = 0; j < dizi.length; j++)
+            {
+                if (silinecekDizi[i]==dizi[j])
+                {
+                    silineceklerIndeksiDizi[counter]=true;
+                }
+                counter++;//silinecek indexi içerde gezdirion kendine esit olanları true yapıor index bittiğinde cıkıyor sıfırlıon digeri gezdirior
+            }counter=0;
+        }
+        System.out.println(Arrays.toString(silineceklerIndeksiDizi));
+
+        counter=0;
+
+        for (int i = 0; i < dizi.length; i++)
+        {
+            if (!silineceklerIndeksiDizi[counter])
+            {
+                yeniListe.add(dizi[i]);
+
+            }
+            counter++;
+        }
+        System.out.println(yeniListe);*/
 
 
+  /*    int[]dizi = {54,99, 5, 54, 13, 37, 555, 79, 99, 113, 555, 17};
+        List<Integer> yeniListe = new ArrayList<>();
+
+        boolean[] silineceklerIndeksiDizi = new boolean[dizi.length];
+        int counter = 0;
+
+        for (int i = 0; i < dizi.length; i++)
+        {
+            for (int j = i+1; j < dizi.length; j++)
+            {
+                if (dizi[i]==dizi[j])
+                {
+                    silineceklerIndeksiDizi[counter]=true;
+                }counter++;
+            }counter=0;
+        }
+
+        counter=0;
+        System.out.println(Arrays.toString(silineceklerIndeksiDizi));
 
 
+        for (int i = 0; i < dizi.length; i++)
+        {
+            if (!silineceklerIndeksiDizi[counter])
+            {
+                yeniListe.add(dizi[i]);
+            }
+            counter++;
+        }
+        System.out.println(yeniListe);*/
 
+        //tekrarsızları yazdırma kısayol
 
+     /*   int[]dizi = {54,99, 5, 54, 13, 37, 555, 79, 99, 113, 555, 17};
+        List<Integer> yeniListe = new ArrayList<>();
 
+        int counter = 0;
+
+        for (int w:dizi)
+        {
+            if (!yeniListe.contains(w))
+            {
+                yeniListe.add(w);
+            }
+        }
+        System.out.println(yeniListe);*/
 
 
     }

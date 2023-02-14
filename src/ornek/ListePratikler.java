@@ -1,9 +1,6 @@
 package ornek;
 
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Random;
-import java.util.Scanner;
+import java.util.*;
 
 public class ListePratikler
 {
@@ -852,7 +849,7 @@ public class ListePratikler
         } System.out.println(liste);*/
 
 
-         /* int[] dizi={0,2,5,3,1,7,3,2};
+      /*   int[] dizi={0,2,5,3,1,7,3,2};
         Arrays.sort(dizi);
 
         List<Integer> list = new ArrayList<>();
@@ -887,6 +884,99 @@ public class ListePratikler
             }
         }
         System.out.println(liste);*/
+
+
+    /*    int[][] cokBoyutluDizi = {{2, 3, 5, 13}, {37, 54,99, 113, 555, 1337}, {0, -7, -9,25,17}};
+        int[] silinecekDizi = {5, 17, -9, 54};
+        List<List<Integer>> yeniCokBoyutluListe = new ArrayList<>();
+
+        int silinecekIndex = 0;
+        int toplam=0;
+
+
+        for (int i = 0; i < cokBoyutluDizi.length; i++)
+        {
+            toplam+=cokBoyutluDizi[i].length;
+        }
+        boolean[] indexDizi=new boolean[toplam];
+
+
+
+        for (int i = 0; i < silinecekDizi.length; i++)
+        {
+            for (int j = 0; j < cokBoyutluDizi.length; j++)
+            {
+                if (indexDizi[silinecekIndex])
+                    continue;
+                for (int k = 0; k < cokBoyutluDizi[j].length; k++)
+                {
+                    if (cokBoyutluDizi[j][k]==silinecekDizi[i])
+                    {
+                        indexDizi[silinecekIndex]=true;
+                    }
+                    silinecekIndex++;
+                }
+
+            }silinecekIndex=0;
+        }
+
+        System.out.println(Arrays.toString(indexDizi));
+
+        for (int i = 0; i < cokBoyutluDizi.length; i++)
+        {
+            List<Integer> yeniListeIc=new ArrayList<>();
+
+            for (int j = 0; j < cokBoyutluDizi[i].length; j++)
+            {
+                if (!indexDizi[silinecekIndex])
+                {
+                    yeniListeIc.add(cokBoyutluDizi[i][j]);
+                }
+                silinecekIndex++;
+            }yeniCokBoyutluListe.add(yeniListeIc);
+
+        }
+        System.out.println(yeniCokBoyutluListe);*/
+        //Strinbuilder javada bir classdır.String oluşturmaya yarar
+        //String class varken niçin strin buiderar ihtiyac duyarız
+        //string ınmutable classdır.ama biz bazen mutable strinlere
+        //ihtiyac duyarız. stringbuılder bize mutable string verir.
+        //ımmutable classlarda var olan deger değiştirilemez.siz varolan degeri değiştirmek istediğinizde
+        //yeni bir variable  yeni degerle oluşturulur eski variablin pointera döndürülür
+        //Eger bir variableı hicbnir pointer göstermiyorsa garbage collector tarafından silinir.
+        //mutable classlarda var olan deger değiştirilebilir
+
+       /* String str="java";
+
+        str="Super java";//yeni adresi superjava olur.heap te digeri yani java tutulur.ama stackte tutulan adres oraya yönlendirir
+        System.out.println(str);
+        StringBuilder strb=new StringBuilder("Java");//1.yol
+        strb=new StringBuilder("super java");//strinbuilder da var olan string direk değiştirilir heapten değistirir
+
+        StringBuilder strb3=new StringBuilder(); //2. yol
+        strb3.append("java");
+        strb3.append(" is easy");
+        strb3.append(" learn").append(" java earn money");
+        System.out.println(strb3);
+        StringBuilder strb4=new StringBuilder();
+        strb3.append("cat");
+        int sayi=strb3.length();
+        int kapazite =strb3.capacity();//16 yazar 1 kapazite 16 dır.18 karakterliyse var olamnın 2 katının 2 fazlası gelir 34 yazar
+
+        strb3.setCharAt(2,'r');//index 2 yi r ye değigtir
+        System.out.println(strb3);
+
+        strb3.delete(7,12);//7 den baslar 12 ye kadar sil
+        System.out.println(strb3);
+        strb3.reverse();//ters
+        System.out.println(strb3);
+
+        String abc="java";
+        abc.replace("a","i");//atama pılmadığından strıng buılder gibi deildir.bu durum immutabledir
+        System.out.println(abc);
+
+        strb3.insert(3,"xxx");
+        System.out.println(strb3);*/
 
 
 

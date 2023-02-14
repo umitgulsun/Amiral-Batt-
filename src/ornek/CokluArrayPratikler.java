@@ -1,5 +1,8 @@
 package ornek;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class CokluArrayPratikler
 {
     public static void main(String[] args)
@@ -235,10 +238,6 @@ public class CokluArrayPratikler
         }
 
         System.out.println(Arrays.toString(ydizi));*/
-
-
-
-
 
 
 
